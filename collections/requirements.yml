@@ -1,0 +1,17 @@
+---
+collections:
+  - name: awx.awx
+  - name: theforeman.foreman
+  - name: google.cloud
+  - name: ovirt.ovirt
+  - name: kubernetes.core
+  - name: ansible.posix
+  - name: arubanetworks.aos_switch
+  - name: ansible.netcommon
+  - name: community.network
+  - name: community.general
+    version: 6.3.0
+    source: https://galaxy.ansible.com
+  - name: community.crypto
+    version: 2.10.0
+    source: https://galaxy.ansible.com
