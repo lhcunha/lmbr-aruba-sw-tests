@@ -1,0 +1,14 @@
+- name: ORGANIZING NETWORK DEVICES BY SYS_OS VARIABLE
+  hosts: "{{ target }}"
+  gather_facts: False
+  tasks:
+    - name: CLASSIFY NETWORK DEVICES BY SYS_OS VARIABLE
+      group_by:
+        key: "{{ sys_os }}"
+
+- hosts: arubaos_sw
+  gather_facts: False
+  ignore_errors: False
+  tasks:
+    - import_tasks: ./arubaos/tasks_arubaos.yml
+      when: "'Access-Switches' in group_names"
