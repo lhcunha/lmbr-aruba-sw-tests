@@ -1,0 +1,9 @@
+- name: GET SHOW INT BRIEF OUTPUT TO PREVENT FALSE-POSITIVE
+  arubanetworks.aos_switch.arubaoss_command:
+    commands:
+      - "show interface brief"
+  register: int_brief_output_prevent
+
+- name: PRINT OUTPUT
+  debug:
+    msg: "{{int_brief_output_prevent}}"
