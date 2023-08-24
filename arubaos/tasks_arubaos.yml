@@ -2,7 +2,7 @@
   arubanetworks.aos_switch.arubaoss_command:
     commands:
       - "show interface brief"
-    wait_for: result[0] contains STATUS
+    wait_for: msg.stdout_lines | length > 0
   register: int_brief_output_prevent
 
 - name: PRINT OUTPUT
