@@ -2,6 +2,8 @@
   arubanetworks.aos_switch.arubaoss_command:
     commands:
       - "show interface brief"
+  wait_for:
+    delay: 12
   register: int_brief_output_prevent
 
 - name: PRINT OUTPUT
