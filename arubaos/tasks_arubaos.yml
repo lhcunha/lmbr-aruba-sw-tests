@@ -8,3 +8,13 @@
 - name: PRINT OUTPUT
   debug:
     msg: "{{int_brief_output_prevent}}"
+
+- name: GET running config
+  arubanetworks.aos_switch.arubaoss_command:
+    commands:
+      - "show running-config"
+  register: running_config_output
+
+- name: PRINT OUTPUT
+  debug:
+    msg: "{{running_config_output}}"
